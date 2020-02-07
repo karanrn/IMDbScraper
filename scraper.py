@@ -40,10 +40,11 @@ def main():
                     years = re.search('\((.*)\)', temp_date)[1].split('–')
                     if is_date(years[0]):
                         release_date = str(years[0])
-                    if is_date(years[1]):
-                        release_date = release_date + " - " + str(years[1])
-                    else:
-                        release_date = release_date + " - "
+                    if len(years) >= 2:
+                        if is_date(years[1]):
+                            release_date = release_date + " - " + str(years[1])
+                        else:
+                            release_date = release_date + " - "
                 elif is_date(re.sub('\([^\)]+\)', '', temp_date).strip()):
                     release_date = str(re.sub('\([^\)]+\)', '', temp_date).strip())
                 else:
