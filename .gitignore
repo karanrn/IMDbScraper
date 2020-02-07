@@ -1,0 +1,5 @@
+.vscode
+env/
+geckodriver.log
+*.csv
+bin/
